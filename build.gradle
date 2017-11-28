@@ -12,6 +12,7 @@ buildscript {
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE'
     }
 }
 
@@ -56,7 +57,7 @@ dependencies {
     compile "redis.clients:jedis"
 
     // Webjars
-    compile "org.webjars:bootstrap:3.1.1"
+    compile "org.webjars:bootstrap:3.3.7"
     compile "org.webjars:angularjs:1.2.16"
     compile "org.webjars:angular-ui:0.4.0-2"
     compile "org.webjars:angular-ui-bootstrap:0.10.0-1"
@@ -67,7 +68,7 @@ dependencies {
 }
 
 jar {
-    baseName = "spring-music"
+    baseName = "spring-dashboard"
     version = "" // omit the version from the war file name
 }
 

@@ -2,34 +2,40 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Album Title</th>
-            <th>Artist</th>
-            <th>Year</th>
-            <th>Genre</th>
+            <th>Image</th>
+            <th><a href="" ng-click="sortField='givenName'">First name</a></th>
+            <th><a href="" ng-click="sortField='familyName'">Last name</a></th>
+            <th><a href="" ng-click="sortField='birthday'">Birthday</a></th>
+            <th><a href="" ng-click="sortField='address'">Address</a></th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="album in albums | orderBy:sortField:sortDescending">
+        <tr ng-repeat="client in clients | orderBy:sortField:sortDescending">
             <td>
-                <in-place-edit field-name='title' input-type='text' input-class='input-large' model=album>{{album.title}}</in-place-edit>
+                <in-place-edit field-name='imageUrl' input-type='text' input-class='input-medium' model=client>
+                    <img src="{{client.imageUrl}}" height=30 />
+                </in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='artist' input-type='artist' input-class='input-large' model=album>{{album.artist}}</in-place-edit>
+                <in-place-edit field-name='givenName' input-type='text' input-class='input-large' model=client>{{client.givenName}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='releaseYear' input-type='text' input-class='input-small' model=album>{{album.releaseYear}}</in-place-edit>
+                <in-place-edit field-name='familyName' input-type='familyName' input-class='input-large' model=client>{{client.familyName}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='genre' input-type='text' input-class='input-medium' model=album>{{album.genre}}</in-place-edit>
+                <in-place-edit field-name='birthday' input-type='text' input-class='input-small' model=client>{{client.birthday}}</in-place-edit>
+            </td>
+            <td>
+                <in-place-edit field-name='address' input-type='text' input-class='input-medium' model=client>{{client.address}}</in-place-edit>
             </td>
             <td class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-cog"></span>
+                    <span class="glyphicon glyphicon-edit"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li role="presentation"><a ng-click="updateAlbum(album)">edit</a></li>
-                    <li role="presentation"><a ng-click="deleteAlbum(album)">delete</a></li>
+                    <li role="presentation"><a ng-click="updateClient(client)">edit</a></li>
+                    <li role="presentation"><a ng-click="deleteClient(client)">delete</a></li>
                 </ul>
             </td>
         </tr>

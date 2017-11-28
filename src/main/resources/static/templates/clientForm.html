@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h3 ng-show="clientAction === 'add'">Add an client</h3>
+    <h3 ng-show="clientAction === 'update'">Edit an client</h3>
+</div>
+<div class="modal-body">
+    <form name="clientForm" role="form">
+        <div class="form-group has-feedback" ng-class="{'has-warning': clientForm.givenName.$invalid, 'has-success': clientForm.givenName.$valid}">
+            <label for="givenName">Client Title</label>
+            <input type="text" class="form-control input-large" id="givenName" name="givenName" required ng-model="client.givenName">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': clientForm.givenName.$invalid, 'glyphicon-ok': clientForm.givenName.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': clientForm.familyName.$invalid, 'has-success': clientForm.familyName.$valid}">
+            <label for="familyName">Last Name</label>
+            <input type="text" class="form-control input-large" id="familyName" name="familyName" required ng-model="client.familyName">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': clientForm.familyName.$invalid, 'glyphicon-ok': clientForm.familyName.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': clientForm.birthday.$invalid, 'has-success': clientForm.birthday.$valid}">
+            <label for="birthday">Birthday</label>
+            <input type="text" class="form-control input-small" id="birthday" name="birthday" required ng-model="client.birthday">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': clientForm.birthday.$invalid, 'glyphicon-ok': clientForm.birthday.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': clientForm.imageUrl.$invalid, 'has-success': clientForm.imageUrl.$valid}">
+            <label for="imageUrl">Image</label>
+            <input type="text" class="form-control input-medium" id="imageUrl" name="imageUrl" required ng-model="client.imageUrl">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': clientForm.imageUrl.$invalid, 'glyphicon-ok': clientForm.imageUrl.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': clientForm.address.$invalid, 'has-success': clientForm.address.$valid}">
+            <label for="imageUrl">Address</label>
+            <input type="text" class="form-control input-medium" id="address" name="address" required ng-model="client.address">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': clientForm.address.$invalid, 'glyphicon-ok': clientForm.address.$valid}"></span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-md" ng-disabled="clientForm.$invalid" ng-click="ok()" >OK</button>
+    <button class="btn btn-default btn-md" ng-click="cancel()">Cancel</button>
+</div>
