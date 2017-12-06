@@ -2,6 +2,6 @@
 applications:
 - name: spring-dashboard
   memory: 1G
-  random-route: true
+  host: spring-dashboard-${random-word}
   path: build/libs/spring-dashboard.jar
 
